@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider, Navigate } from 'react-router-dom'
 import Home from './pages/Home'
-import Setting from './pages/setting'
+import Setting from './pages/Setting'
 import Explore from './pages/explore'
 import Login from './pages/Login'
 import DashboardLayout from './layout/DashboardLayout'
