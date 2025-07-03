@@ -59,8 +59,9 @@ export default function OnboardStep1() {
   return (
     <div className="max-w-md mx-auto p-4 border rounded shadow">
       <h2 className="text-xl font-bold mb-4">Update Profile</h2>
-      {message && <p className="mb-2 text-sm text-center text-green-600">{message}</p>}
-      <form onSubmit={handleSubmit} className="space-y-3">
+      <p>Work in progress</p>
+      {/* {message && <p className="mb-2 text-sm text-center text-green-600">{message}</p>} */}
+      {/* <form onSubmit={handleSubmit} className="space-y-3">
         <div>
           <label className="block text-sm font-medium">Username</label>
           <input
@@ -105,7 +106,7 @@ export default function OnboardStep1() {
         >
           {loading ? 'Updating...' : 'Update'}
         </button>
-      </form>
+      </form> */}
     </div>
   );
 };

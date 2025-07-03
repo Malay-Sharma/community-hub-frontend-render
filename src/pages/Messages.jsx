@@ -19,7 +19,7 @@ const Messages = () => {
 
   useEffect(() => {
     const fetchUsers = async () => {
-      const res = await fetch("http://localhost:4000/api");
+      const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api`);
       const data = await res.json();
       setAllUsers(data.filter(u => u._id !== currentUser?._id));
     };
@@ -27,7 +27,7 @@ const Messages = () => {
   }, [currentUser]);
 
   const loadChatHistory = async (chatId) => {
-    const res = await fetch(`http://localhost:4000/api/chats/messages/${chatId}`);
+    const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/chats/messages/${chatId}`);
     const msgs = await res.json();
     setChatHistory(Array.isArray(msgs) ? msgs : []);
   };
@@ -38,14 +38,14 @@ const Messages = () => {
 
     try {
       // Try to find existing chat
-      const findRes = await fetch(`http://localhost:4000/api/chats/find/${currentUser._id}/${user._id}`);
+      const findRes = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/chats/find/${currentUser._id}/${user._id}`);
       if (findRes.ok) {
         const chat = await findRes.json();
         setChatId(chat._id);
         await loadChatHistory(chat._id);
       } else {
         // Create new chat if not found
-        const createRes = await fetch(`http://localhost:4000/api/chats/chat`, {
+        const createRes = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/chats/chat`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ user1Id: currentUser._id, user2Id: user._id })
@@ -68,7 +68,7 @@ const Messages = () => {
   const handleSendMessage = async () => {
     if (!newMessage.trim()) return;
     try {
-      const res = await fetch(`http://localhost:4000/api/chats/message`, {
+      const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/chats/message`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

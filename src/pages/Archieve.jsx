@@ -9,7 +9,7 @@ const Archieve = () => {
   useEffect(() => {
     const fetchImages = async () => {
       try {
-        const res = await axios.get("http://localhost:4000/api/images", {
+        const res = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/images`, {
           withCredentials: true,
         });
         setImages(res.data);

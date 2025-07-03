@@ -67,11 +67,11 @@ const sidebar_menu = {
       url: "/dashboard/search",
       icon: Search ,
     },
-    {
-      title: "Community",
-      url: "/dashboard/explore",
-      icon: Telescope,
-    },
+    // {
+    //   title: "Community",
+    //   url: "/dashboard/explore",
+    //   icon: Telescope,
+    // },
     {
       title: "Posts",
       url: "/dashboard/archieve",
@@ -87,16 +87,16 @@ const sidebar_menu = {
       url: "/dashboard/messages",
       icon: MessageSquareMore,
     },
-    {
-      title: "Update",
-      url: "/onboard/step1",
-      icon: Bell,
-    },
-    {
-      title: "Comments",
-      url: "#",
-      icon: MessageCircle,
-    },
+    // {
+    //   title: "Update",
+    //   url: "/onboard/step1",
+    //   icon: Bell,
+    // },
+    // {
+    //   title: "Comments",
+    //   url: "#",
+    //   icon: MessageCircle,
+    // },
     {
       title: "Create",
       url: "/dashboard/image-upload",

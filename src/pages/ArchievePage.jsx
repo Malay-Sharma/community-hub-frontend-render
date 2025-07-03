@@ -35,7 +35,7 @@ const ArchievePage = () => {
         let img = image;
 
         if (!img) {
-          const res = await axios.get(`http://localhost:4000/api/images/imagekit/${id}`, {
+          const res = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/images/imagekit/${id}`, {
             withCredentials: true,
           });
           img = res.data.image;
@@ -44,7 +44,7 @@ const ArchievePage = () => {
 
         if (img && !post) {
           const postId = img.name.split("_")[0];
-          const postRes = await axios.get(`http://localhost:4000/api/images/mongo/${postId}`, {
+          const postRes = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/images/mongo/${postId}`, {
             withCredentials: true,
           });
           setPost(postRes.data.post);
