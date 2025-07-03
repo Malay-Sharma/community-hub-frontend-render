@@ -115,7 +115,7 @@ const filterMap = {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const res = await fetch("http://localhost:4000/api/auth/me", {
+        const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/auth/me`, {
           credentials: "include",
         });
         const data = await res.json();
@@ -222,7 +222,7 @@ const handleUpload = async () => {
     console.log("🚀 Uploading filtered image...");
 
     const response = await axios.post(
-      "http://localhost:4000/api/stories/upload",
+      `${import.meta.env.VITE_API_BASE_URL}/api/stories/upload`,
       {
         fileName: file.name,
         fileData: `data:${blob.type};base64,${base64}`,

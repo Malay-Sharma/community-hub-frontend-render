@@ -13,7 +13,7 @@ const StoryDisplay = () => {
 
   const fetchStories = async () => {
     try {
-      const res = await axios.get("http://localhost:4000/api/stories/imagekit");
+      const res = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/stories/imagekit`);
       setStories(res.data);
     } catch (err) {
       console.error("Error fetching stories", err);
